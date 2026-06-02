@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>建造模拟 — 雪域阳光方舟</title>
+  <meta name="description" content="雪域阳光方舟 — 建造模拟：分件入场、流程 8 步、细部连接、模拟效果、构件表。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav" id="mainNav">
+    <a href="index.html" class="nav-brand">雪域阳光方舟</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="site.html" class="nav-link">前期分析</a>
+      <a href="design.html" class="nav-link">单体设计</a>
+      <a href="performance.html" class="nav-link">性能分析</a>
+      <a href="self-sustaining.html" class="nav-link">自保障设计</a>
+      <a href="construction.html" class="nav-link active">建造模拟</a>
+    </div>
+  </nav>
+
+  <div style="height:64px;"></div>
+
+  <section class="page-container">
+    <h2 class="section-title">建造模拟</h2>
+    <p class="section-subtitle">分件入场 · 流程 8 步 · 细部连接 · 构件表 · 施工进度</p>
+
+    <!-- 项目简介 -->
+    <div style="max-width:780px;margin:0 auto 32px;text-align:center;">
+      <p style="font-size:14px;color:var(--fg-secondary);line-height:1.9;">
+        除了通用设计和性能分析外，该方案也对搭建流程着重进行了<strong>建造模拟</strong>，以确保方案能具有真实性和落地性。
+        对此，我在结构上进行了细致的<strong>分件设计</strong>：<strong>11 辆载重为 18 吨的 9.6 米长货车入场</strong>，
+        从搭建逻辑上模拟了该方案如何从基本的场地处理开始，到搭建中央大平台，再到安装四周的 1×3 预制构件箱体，再到最后的屋顶桁架搭建。
+      </p>
+    </div>
+
+    <!-- ============== 1. 建造过程模拟 · 11 车入场 ============== -->
+    <h3 class="subsection-title">
+      <span class="num">1</span> 建造过程模拟 · 11 辆 18 吨 9.6m 长货车入场
+    </h3>
+    <div class="build-banner">
+      <img src="images/optimized/construction-axon.jpg" alt="11 辆 18 吨卡车分件入场" width="1920" height="1358">
+      <div>
+        <h4 style="font-size:16px;font-weight:600;color:var(--fg-primary);margin-bottom:12px;">分件物流规划</h4>
+        <p style="font-size:13px;color:var(--fg-secondary);line-height:1.8;margin-bottom:12px;">
+          整个建筑拆解为<strong>11 车 18 吨的物流单元</strong>，每车长度为 9.6m，刚好适配从班戈县到央木村
+          半柏油半土路的限行要求。分件设计遵循"6m/9m 走尺方案"，以最大化物流堆叠密度，降低单件运输成本。
+        </p>
+        <ul style="list-style:none;font-size:13px;color:var(--fg-secondary);line-height:1.8;">
+          <li>· 体块实现"即搭即用"</li>
+          <li>· 杆件提供"空间容错"</li>
+          <li>· 两种模数混合管理</li>
+          <li>· 最大限度压缩重型起重设备在现场的租赁时间</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============== 2. 建造模拟流程设计 · 8 步 ============== -->
+    <h3 class="subsection-title">
+      <span class="num">2</span> 建造模拟流程设计 · 8 步搭建
+    </h3>
+    <p style="font-size:13px;color:var(--fg-secondary);margin-bottom:20px;line-height:1.7;">
+      从基础到屋顶的完整 8 步搭建流程，结合 BIM 模拟进行了碰撞检查与工期验证。
+    </p>
+
+    <div class="process-flow">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">场地处理</div>
+        <div class="step-sub">地螺丝 + 基础</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">蓄热体块</div>
+        <div class="step-sub">MgO 砖夹层</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">地梁风管</div>
+        <div class="step-sub">平台搭设</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-title">平台完成</div>
+        <div class="step-sub">中央大平台</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <div class="step-title">四周箱体</div>
+        <div class="step-sub">1×3 预制构件</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">6</div>
+        <div class="step-title">次级结构</div>
+        <div class="step-sub">梁柱连接</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">7</div>
+        <div class="step-title">增设柱</div>
+        <div class="step-sub">局部加强</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">8</div>
+        <div class="step-title">屋顶桁架</div>
+        <div class="step-sub">结构封顶</div>
+      </div>
+    </div>
+
+    <!-- 流程图片 5 步（用 build-step 图） -->
+    <h4 style="font-size:14px;font-weight:600;margin:24px 0 16px;color:var(--fg-primary);text-align:center;">关键节点 · BIM 模拟效果</h4>
+    <div class="perf-grid cols-3">
+      <div class="perf-card">
+        <img src="images/optimized/build-step-1.png" alt="搭建节点 1" loading="lazy" width="1920" height="1217">
+        <div class="perf-caption">节点 A · 平台初现</div>
+      </div>
+      <div class="perf-card">
+        <img src="images/optimized/build-step-2.png" alt="搭建节点 2" loading="lazy" width="1920" height="1217">
+        <div class="perf-caption">节点 B · 框架立起</div>
+      </div>
+      <div class="perf-card">
+        <img src="images/optimized/build-step-3.png" alt="搭建节点 3" loading="lazy" width="1920" height="1217">
+        <div class="perf-caption">节点 C · 箱体合拢</div>
+      </div>
+      <div class="perf-card">
+        <img src="images/optimized/build-step-4.png" alt="搭建节点 4" loading="lazy" width="1920" height="1217">
+        <div class="perf-caption">节点 D · 结构完成</div>
+      </div>
+      <div class="perf-card">
+        <img src="images/optimized/build-step-5.png" alt="搭建节点 5" loading="lazy" width="1920" height="1217">
+        <div class="perf-caption">节点 E · 屋顶桁架</div>
+      </div>
+      <div class="perf-card">
+        <img src="images/optimized/build-sub-2-6.png" alt="箱体细节" loading="lazy" width="1920" height="960">
+        <div class="perf-caption">箱体细部</div>
+      </div>
+    </div>
+
+    <!-- ============== 3. 细部连接构造 ============== -->
+    <h3 class="subsection-title">
+      <span class="num">3</span> 细部连接构造
+    </h3>
+    <p style="font-size:13px;color:var(--fg-secondary);margin-bottom:20px;line-height:1.7;">
+      主体采用干式栓接连接，避免现场焊接。所有连接节点均通过 Karamba3D 力学验证。
+    </p>
+
+    <div class="perf-grid cols-2">
+      <div class="perf-card">
+        <img src="images/optimized/build-sub-1-1.png" alt="柱脚连接方式" loading="lazy" width="1920" height="960">
+        <div class="perf-caption">柱脚连接方式 · 地螺丝 + 法兰盘</div>
+      </div>
+      <div class="perf-card">
+        <img src="images/optimized/build-sub-1-2.png" alt="两个框架单元连接" loading="lazy" width="1920" height="931">
+        <div class="perf-caption">两个框架单元连接 · 高强螺栓</div>
+      </div>
+      <div class="perf-card">
+        <img src="images/optimized/build-sub-1-3.png" alt="桁架与增设支柱连接" loading="lazy" width="2181" height="1091">
+        <div class="perf-caption">桁架与增设支柱连接</div>
+      </div>
+      <div class="perf-card">
+        <img src="images/optimized/build-sub-1-4.png" alt="两个框架单元连接 - 备用" loading="lazy" width="2181" height="1091">
+        <div class="perf-caption">两个框架单元连接 · 节点副板</div>
+      </div>
+    </div>
+
+    <!-- ============== 4. 建筑预制装配构件总表 ============== -->
+    <h3 class="subsection-title">
+      <span class="num">4</span> 建筑预制装配构件总表
+    </h3>
+    <p style="font-size:13px;color:var(--fg-secondary);margin-bottom:20px;line-height:1.7;">
+      按结构构件、连接构件、基础构件、围护构件分类，含单位重量与总重量计算。
+    </p>
+
+    <div class="cost-table-wrapper">
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th style="width:40px;">序号</th>
+            <th>构件名称</th>
+            <th>规格参数</th>
+            <th>材料</th>
+            <th style="width:50px;">单位</th>
+            <th style="width:60px;text-align:right;">数量</th>
+            <th style="width:90px;text-align:right;">单位重量<br><span style="font-size:11px;color:var(--fg-muted);font-weight:400;">(kg)</span></th>
+            <th style="width:100px;text-align:right;">总重量<br><span style="font-size:11px;color:var(--fg-muted);font-weight:400;">(kg)</span></th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:var(--bg-base);">
+            <td colspan="9" style="padding:10px 20px;font-weight:700;color:var(--accent);font-size:14px;letter-spacing:0.02em;">一、结构构件</td>
+          </tr>
+          <tr><td>1</td><td>桁架梁</td><td>3000×600 mm</td><td>□60×60×4 方钢管</td><td>根</td><td class="cell-number">64</td><td class="cell-number">21.1</td><td class="cell-number">1,350</td><td>3m 跨度主梁</td></tr>
+          <tr><td>2</td><td>桁架梁</td><td>4000×600 mm</td><td>□60×60×4 方钢管</td><td>根</td><td class="cell-number">48</td><td class="cell-number">28.1</td><td class="cell-number">1,350</td><td>4m 跨度主梁</td></tr>
+          <tr><td>3</td><td>桁架柱</td><td>5000×600 mm</td><td>□60×60×4 方钢管</td><td>根</td><td class="cell-number">48</td><td class="cell-number">35.2</td><td class="cell-number">1,687</td><td>5m 高框架柱</td></tr>
+          <tr><td>4</td><td>桁架柱</td><td>2000×600 mm</td><td>□60×60×4 方钢管</td><td>根</td><td class="cell-number">16</td><td class="cell-number">14.1</td><td class="cell-number">225</td><td>2m 高短柱 / 窗台柱</td></tr>
+          <tr><td>5</td><td>窄 H 型钢</td><td>3000×250 mm</td><td>H250×125×6×9</td><td>根</td><td class="cell-number">66</td><td class="cell-number">88.8</td><td class="cell-number">5,861</td><td>次梁 / 檩条</td></tr>
+          <tr><td>6</td><td>三角形桁架</td><td>高 2000 mm，□60×60×4</td><td>Q355B 方钢管</td><td>根</td><td class="cell-number">16</td><td class="cell-number">~100</td><td class="cell-number">1,600</td><td>屋面 / 支撑桁架（估算）</td></tr>
+          <tr><td>7</td><td>钢柱</td><td>φ250×8 mm，高 2000</td><td>Q355B 圆钢管</td><td>根</td><td class="cell-number">12</td><td class="cell-number">95.5</td><td class="cell-number">1,146</td><td>新增落地钢柱</td></tr>
+          <tr><td>8</td><td>预制地板</td><td>1500×1500×120 mm</td><td>C30 钢筋混凝土</td><td>块</td><td class="cell-number">52</td><td class="cell-number">675</td><td class="cell-number">35,100</td><td>局部预制楼板</td></tr>
+          <tr style="background:var(--bg-base);font-weight:600;">
+            <td colspan="5" style="text-align:right;color:var(--fg-primary);">结构构件小计</td>
+            <td class="cell-number" style="color:var(--fg-primary);">—</td>
+            <td style="text-align:right;color:var(--fg-primary);">—</td>
+            <td class="cell-number" style="color:var(--accent);font-weight:700;">48,319</td>
+            <td style="color:var(--fg-secondary);">钢材 13.2 t + 混凝土 35.1 t</td>
+          </tr>
+
+          <tr style="background:var(--bg-base);">
+            <td colspan="9" style="padding:10px 20px;font-weight:700;color:var(--accent);font-size:14px;letter-spacing:0.02em;">二、连接构件</td>
+          </tr>
+          <tr><td>9</td><td>高强螺栓</td><td>M20×60 mm，10.9 级</td><td>40Cr / 35VB</td><td>套</td><td class="cell-number">2,000</td><td class="cell-number">0.30</td><td class="cell-number">600</td><td>含螺母、垫圈</td></tr>
+          <tr><td>10</td><td>节点副板</td><td>200×150×10 mm</td><td>Q355B 钢板</td><td>块</td><td class="cell-number">120</td><td class="cell-number">2.4</td><td class="cell-number">283</td><td>端板 / 连接板</td></tr>
+          <tr style="background:var(--bg-base);font-weight:600;">
+            <td colspan="5" style="text-align:right;color:var(--fg-primary);">连接构件小计</td>
+            <td class="cell-number" style="color:var(--fg-primary);">—</td>
+            <td style="text-align:right;color:var(--fg-primary);">—</td>
+            <td class="cell-number" style="color:var(--accent);font-weight:700;">883</td>
+            <td style="color:var(--fg-secondary);">约 0.9 吨</td>
+          </tr>
+
+          <tr style="background:var(--bg-base);">
+            <td colspan="9" style="padding:10px 20px;font-weight:700;color:var(--accent);font-size:14px;letter-spacing:0.02em;">三、基础构件</td>
+          </tr>
+          <tr><td>11</td><td>地螺丝（螺旋桩）</td><td>φ89×3 mm，长 2000</td><td>Q355B 钢管</td><td>根</td><td class="cell-number">96</td><td class="cell-number">15.0</td><td class="cell-number">1,440</td><td>含螺旋叶片</td></tr>
+          <tr><td>12</td><td>桩顶法兰盘</td><td>配套 φ89 桩顶</td><td>Q355B 钢板</td><td>个</td><td class="cell-number">96</td><td class="cell-number">5.0</td><td class="cell-number">480</td><td>柱脚连接件</td></tr>
+          <tr style="background:var(--bg-base);font-weight:600;">
+            <td colspan="5" style="text-align:right;color:var(--fg-primary);">基础构件小计</td>
+            <td class="cell-number" style="color:var(--fg-primary);">—</td>
+            <td style="text-align:right;color:var(--fg-primary);">—</td>
+            <td class="cell-number" style="color:var(--accent);font-weight:700;">1,920</td>
+            <td style="color:var(--fg-secondary);">约 1.9 吨</td>
+          </tr>
+
+          <tr style="background:var(--bg-base);">
+            <td colspan="9" style="padding:10px 20px;font-weight:700;color:var(--accent);font-size:14px;letter-spacing:0.02em;">四、围护构件</td>
+          </tr>
+          <tr><td>13</td><td>金属面层岩棉夹芯地板</td><td>3100×1500×174 mm</td><td>1.2mm 钢板 + 150 岩棉</td><td>块</td><td class="cell-number">48</td><td class="cell-number">171</td><td class="cell-number">8,222</td><td>12+150+12 构造</td></tr>
+          <tr><td>14</td><td>混凝土面层岩棉夹芯围护板</td><td>1920×1200×174 mm</td><td>12mm 混凝土 + 150 岩棉</td><td>块</td><td class="cell-number">184</td><td class="cell-number">180</td><td class="cell-number">33,065</td><td>外墙大板</td></tr>
+          <tr><td>15</td><td>混凝土面层岩棉夹芯围护板</td><td>1200×950×174 mm</td><td>12mm 混凝土 + 150 岩棉</td><td>块</td><td class="cell-number">48</td><td class="cell-number">89</td><td class="cell-number">4,267</td><td>门窗洞口填充板</td></tr>
+          <tr><td>16</td><td>内饰板</td><td>15 mm 厚，约 1.2×0.95 m</td><td>桦木饰面板</td><td>块</td><td class="cell-number">66</td><td class="cell-number">11.1</td><td class="cell-number">733</td><td>室内墙面装饰</td></tr>
+          <tr style="background:var(--bg-base);font-weight:600;">
+            <td colspan="5" style="text-align:right;color:var(--fg-primary);">围护构件小计</td>
+            <td class="cell-number" style="color:var(--fg-primary);">—</td>
+            <td style="text-align:right;color:var(--fg-primary);">—</td>
+            <td class="cell-number" style="color:var(--accent);font-weight:700;">46,287</td>
+            <td style="color:var(--fg-secondary);">约 46.3 吨</td>
+          </tr>
+
+          <tr style="background:var(--accent-bg);font-weight:700;">
+            <td colspan="5" style="text-align:right;color:var(--fg-primary);font-size:15px;padding:16px 20px;">全部构件合计</td>
+            <td class="cell-number" style="color:var(--fg-primary);font-size:15px;">—</td>
+            <td style="text-align:right;color:var(--fg-primary);font-size:15px;">—</td>
+            <td class="cell-number" style="color:var(--accent);font-size:16px;">97,409</td>
+            <td style="color:var(--fg-primary);font-size:14px;">约 97.4 吨</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 计算说明 -->
+    <h3 class="subsection-title">
+      <span class="num">5</span> 计算说明
+    </h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <div class="card" style="padding:20px;">
+        <div style="font-size:12px;color:var(--fg-muted);margin-bottom:6px;">钢材密度</div>
+        <div style="font-size:15px;font-weight:600;color:var(--fg-primary);">7,850 kg/m³</div>
+        <div style="font-size:12px;color:var(--fg-secondary);margin-top:4px;">Q235 / Q355B 方钢管、H 型钢、钢板</div>
+      </div>
+      <div class="card" style="padding:20px;">
+        <div style="font-size:12px;color:var(--fg-muted);margin-bottom:6px;">混凝土密度</div>
+        <div style="font-size:15px;font-weight:600;color:var(--fg-primary);">2,500 kg/m³</div>
+        <div style="font-size:12px;color:var(--fg-secondary);margin-top:4px;">C30 预制钢筋混凝土楼板 / 围护板面层</div>
+      </div>
+      <div class="card" style="padding:20px;">
+        <div style="font-size:12px;color:var(--fg-muted);margin-bottom:6px;">岩棉芯密度</div>
+        <div style="font-size:15px;font-weight:600;color:var(--fg-primary);">120 kg/m³</div>
+        <div style="font-size:12px;color:var(--fg-secondary);margin-top:4px;">夹芯板保温芯材</div>
+      </div>
+      <div class="card" style="padding:20px;">
+        <div style="font-size:12px;color:var(--fg-muted);margin-bottom:6px;">连接方式</div>
+        <div style="font-size:15px;font-weight:600;color:var(--fg-primary);">全栓接干式连接</div>
+        <div style="font-size:12px;color:var(--fg-secondary);margin-top:4px;">M20 高强螺栓 + 节点副板，无现场焊接</div>
+      </div>
+      <div class="card" style="padding:20px;">
+        <div style="font-size:12px;color:var(--fg-muted);margin-bottom:6px;">基础形式</div>
+        <div style="font-size:15px;font-weight:600;color:var(--fg-primary);">地螺丝（螺旋桩）基础</div>
+        <div style="font-size:12px;color:var(--fg-secondary);margin-top:4px;">φ89×3×2000 mm，钢柱与桁架柱共用</div>
+      </div>
+      <div class="card" style="padding:20px;">
+        <div style="font-size:12px;color:var(--fg-muted);margin-bottom:6px;">夹芯板构造</div>
+        <div style="font-size:15px;font-weight:600;color:var(--fg-primary);">12 + 150 + 12 mm</div>
+        <div style="font-size:12px;color:var(--fg-secondary);margin-top:4px;">面层 12mm + 岩棉保温 150mm + 内层 12mm</div>
+      </div>
+    </div>
+
+    <!-- 施工进度甘特图 -->
+    <h3 class="subsection-title">
+      <span class="num">6</span> 施工时间 · 20 天总周期
+    </h3>
+    <p style="font-size:13px;color:var(--fg-secondary);margin-bottom:20px;line-height:1.7;">
+      整个建造周期约 20 天，分 3 个关键阶段：基础与地坪（Day 1-9）、结构框架（Day 6-15）、围护与设备（Day 16-20）。
+    </p>
+    <div class="gantt-wrapper">
+      <div class="gantt-chart">
+        <div class="gantt-header">
+          <div></div>
+          <div class="gantt-weeks">
+            <div class="gantt-week">W1</div>
+            <div class="gantt-week">W2</div>
+            <div class="gantt-week">W3</div>
+            <div class="gantt-week">W4</div>
+            <div class="gantt-week">W5</div>
+            <div class="gantt-week">W6</div>
+            <div class="gantt-week">W7</div>
+            <div class="gantt-week">W8</div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-task-name">基础与地坪</div>
+          <div class="gantt-bar-track">
+            <div class="gantt-bar complete" style="left:0%;width:25%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-task-name">主体结构</div>
+          <div class="gantt-bar-track">
+            <div class="gantt-bar complete" style="left:12.5%;width:25%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-task-name">围护系统</div>
+          <div class="gantt-bar-track">
+            <div class="gantt-bar active" style="left:25%;width:37.5%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-task-name">室内装修</div>
+          <div class="gantt-bar-track">
+            <div class="gantt-bar planned" style="left:62.5%;width:25%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-task-name">设备安装</div>
+          <div class="gantt-bar-track">
+            <div class="gantt-bar planned" style="left:50%;width:25%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-task-name">竣工验收</div>
+          <div class="gantt-bar-track">
+            <div class="gantt-bar planned" style="left:87.5%;width:12.5%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 数据接口 -->
+    <script type="application/json" id="schedule-data-schema">
+    {
+      "source": "schedule_data.xlsx",
+      "sheet": "施工进度",
+      "columns": ["任务名称", "开始时间", "结束时间", "持续时间", "状态"],
+      "mapping": {
+        "任务名称": "task",
+        "开始时间": "start",
+        "结束时间": "end",
+        "持续时间": "duration",
+        "状态": "status"
+      }
+    }
+    </script>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">雪域阳光方舟</div>
+        <p class="footer-desc">高海拔极端环境乡村医疗服务基站<br>自保障建筑设计与建造研究</p>
+      </div>
+      <div class="footer-col">
+        <h4>研究模块</h4>
+        <a href="site.html">前期分析</a>
+        <a href="design.html">单体设计</a>
+        <a href="performance.html">性能分析</a>
+        <a href="self-sustaining.html">自保障设计</a>
+        <a href="construction.html">建造模拟</a>
+      </div>
+      <div class="footer-col">
+        <h4>项目信息</h4>
+        <a>学生：司徒瑞麒</a>
+        <a>学号：01121121</a>
+        <a>指导教师：张宏 / 张弦</a>
+        <a>时间：2026.02 — 2026.05</a>
+      </div>
+      <div class="footer-col">
+        <h4>技术支持</h4>
+        <a>Karamba3D · Grasshopper</a>
+        <a>Rhino · Revit · Lumion</a>
+        <a>Excel · Python</a>
+      </div>
+    </div>
+    <div class="footer-copyright">© 2026 东南大学 建筑学院 毕业设计答辩作品集</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.perf-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        const overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:32px;';
+        const big = document.createElement('img');
+        big.src = img.src;
+        big.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;';
+        overlay.appendChild(big);
+        overlay.addEventListener('click', () => overlay.remove());
+        document.body.appendChild(overlay);
+      });
+    });
+  </script>
+</body>
+</html>

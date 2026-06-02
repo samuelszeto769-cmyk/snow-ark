@@ -1,0 +1,45 @@
+# ============================================================
+#  雪域阳光方舟 · .gitignore
+# ============================================================
+
+# 图片原始备份 (不入库, 防止 250MB 备份被 push)
+images_original/
+
+# 工具脚本 (本地使用, 不入库)
+tools/
+
+# OS 垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*~
+
+# PowerShell
+*.log
+compress-log.txt
+
+# 临时文件
+*.tmp
+*.temp
+
+# Exclude original images (kept locally, not in git)
+images/*
+!images/optimized/
+
+# OpenCode / skill tooling (not part of site)
+ui-ux-pro-max-skill-main/
+ui-ux-pro-max-skill-main.zip
+components/
+data/
+js/
+robots.txt
+sitemap.xml
+

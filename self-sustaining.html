@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自保障设计 — 雪域阳光方舟</title>
+  <meta name="description" content="雪域阳光方舟 — 自保障设计：太阳能驱动的蓄能体储能体系、三级水循环系统。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav" id="mainNav">
+    <a href="index.html" class="nav-brand">雪域阳光方舟</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="site.html" class="nav-link">前期分析</a>
+      <a href="design.html" class="nav-link">单体设计</a>
+      <a href="performance.html" class="nav-link">性能分析</a>
+      <a href="self-sustaining.html" class="nav-link active">自保障设计</a>
+      <a href="construction.html" class="nav-link">建造模拟</a>
+    </div>
+  </nav>
+
+  <div style="height:64px;"></div>
+
+  <section class="page-container">
+    <h2 class="section-title">自保障设计</h2>
+    <p class="section-subtitle">能源系统 + 水循环系统 · 在无电网无市政管网条件下实现自循环</p>
+
+    <!-- 关键 KPI -->
+    <div class="kpi-grid" style="margin-bottom:48px;">
+      <div class="kpi-card">
+        <div class="kpi-value">9×9 m</div>
+        <div class="kpi-label">地下室集成空间</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">384 吨</div>
+        <div class="kpi-label">固体蓄热体</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">500°C</div>
+        <div class="kpi-label">极限热温</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">48,000 kWh</div>
+        <div class="kpi-label">总储热容量</div>
+      </div>
+    </div>
+
+    <!-- ============== 1. 能源系统设计 ============== -->
+    <h3 class="subsection-title">
+      <span class="num">1</span> 能源系统设计 · 以太阳能驱动的蓄能体储能体系
+    </h3>
+    <p style="font-size:14px;color:var(--fg-secondary);line-height:1.9;margin-bottom:16px;">
+      本套能源系统设计针对那曲极寒无网环境，<strong>借鉴 Solark5.0 成功案例</strong>，在地下室
+      <strong>9m × 9m 空间</strong>内集成 <strong>384 吨高密度固体蓄热转能矩阵</strong>（128m³）。
+      利用白天屋顶太阳能光伏发电强加热至 <strong>500°C</strong>，可高效率储存 <strong>48 万度电</strong>等量热能；
+      夜间或极寒时段通过中央风机与混风阀调节，向一楼及洗手间输送舒适热风采暖，并同步提供<strong>无菌医疗热水</strong>
+      与全站防冻热源。全系统<strong>无一滴水参与蓄热、零冻结风险、长寿命且免日常维护</strong>，是基站自主高坪效的生命线能源核心。
+    </p>
+
+    <div class="quote-block" style="margin-bottom:32px;">
+      关键优势：完全零冻结风险 · 免日常维护 · 解决弃光 · 稳定微电网
+    </div>
+
+    <!-- 能源系统流程图（SVG 自绘） -->
+    <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;margin-bottom:32px;">
+      <h4 style="font-size:15px;font-weight:600;margin-bottom:20px;color:var(--fg-primary);text-align:center;">能源系统流程图 · 地下全集成</h4>
+      <svg viewBox="0 0 1100 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+        <!-- 定义 -->
+        <defs>
+          <linearGradient id="solar" x1="0" x2="1"><stop offset="0" stop-color="#FFD27A"/><stop offset="1" stop-color="#FFA94D"/></linearGradient>
+          <linearGradient id="storage" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#B8956A"/><stop offset="1" stop-color="#7A5A3A"/></linearGradient>
+          <linearGradient id="air" x1="0" x2="1"><stop offset="0" stop-color="#7EB8D0"/><stop offset="1" stop-color="#5A9FBF"/></linearGradient>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#B8956A"/>
+          </marker>
+        </defs>
+
+        <!-- 白天储能（顶行） -->
+        <text x="20" y="30" font-size="14" font-weight="600" fill="#1A1A1A">能量转化与收集（白天储能）</text>
+
+        <!-- 光伏/光热板 -->
+        <rect x="40" y="60" width="140" height="80" rx="8" fill="url(#solar)" stroke="#B8956A" stroke-width="2"/>
+        <text x="110" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#5A3A1A">光伏/光热板</text>
+        <text x="110" y="120" text-anchor="middle" font-size="11" fill="#5A3A1A">屋顶</text>
+
+        <!-- 光热逆变器 -->
+        <rect x="240" y="60" width="100" height="80" rx="8" fill="#E5E7EB" stroke="#999" stroke-width="1.5"/>
+        <text x="290" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#333">光热逆变器</text>
+        <text x="290" y="120" text-anchor="middle" font-size="11" fill="#666">电加热转化</text>
+
+        <!-- 蓄热体（中央大块） -->
+        <rect x="400" y="50" width="280" height="100" rx="8" fill="url(#storage)" stroke="#5A3A1A" stroke-width="2"/>
+        <text x="540" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#FFF">9m×9m 高密度固体蓄热矩阵</text>
+        <text x="540" y="108" text-anchor="middle" font-size="12" fill="#FFF">128m³ / 384 吨</text>
+        <text x="540" y="128" text-anchor="middle" font-size="11" fill="#FFE8C8">白天蓄热 50°C → 极限热温 500°C</text>
+
+        <!-- 蓄热保温层标注 -->
+        <text x="700" y="80" font-size="12" fill="#5A3A1A" font-weight="500">500mm</text>
+        <text x="700" y="95" font-size="11" fill="#5A3A1A">超绝热保温层</text>
+        <text x="700" y="125" font-size="12" font-weight="600" fill="#B8956A">Q ≈ 48,000 kWh</text>
+
+        <!-- 箭头连接 -->
+        <line x1="180" y1="100" x2="240" y2="100" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="340" y1="100" x2="400" y2="100" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <!-- 夜间释放（底行） -->
+        <text x="20" y="190" font-size="14" font-weight="600" fill="#1A1A1A">能量释放与应用（夜间/极寒时段）</text>
+
+        <!-- 中央风机+混风阀 -->
+        <rect x="60" y="220" width="120" height="70" rx="8" fill="url(#air)" stroke="#5A9FBF" stroke-width="2"/>
+        <text x="120" y="252" text-anchor="middle" font-size="12" font-weight="600" fill="#FFF">中央风机+</text>
+        <text x="120" y="270" text-anchor="middle" font-size="12" font-weight="600" fill="#FFF">风道系统</text>
+
+        <!-- 混风阀 -->
+        <rect x="220" y="220" width="100" height="70" rx="8" fill="#E5E7EB" stroke="#999" stroke-width="1.5"/>
+        <text x="270" y="252" text-anchor="middle" font-size="12" font-weight="600" fill="#333">混风阀调节</text>
+        <text x="270" y="270" text-anchor="middle" font-size="11" fill="#666">温风调节</text>
+
+        <!-- 空气预热盘管 -->
+        <rect x="360" y="220" width="120" height="70" rx="8" fill="url(#storage)" stroke="#5A3A1A" stroke-width="2"/>
+        <text x="420" y="252" text-anchor="middle" font-size="12" font-weight="600" fill="#FFF">空气预热盘管</text>
+        <text x="420" y="270" text-anchor="middle" font-size="11" fill="#FFE8C8">混风调节至 45°C</text>
+
+        <!-- 一楼采暖 -->
+        <rect x="520" y="200" width="120" height="50" rx="8" fill="#FFF" stroke="#B8956A" stroke-width="1.5"/>
+        <text x="580" y="222" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A1A">医疗基站</text>
+        <text x="580" y="240" text-anchor="middle" font-size="12" fill="#666">一楼采暖</text>
+
+        <!-- 洗手间防冻 -->
+        <rect x="520" y="260" width="120" height="50" rx="8" fill="#FFF" stroke="#B8956A" stroke-width="1.5"/>
+        <text x="580" y="282" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A1A">洗手间</text>
+        <text x="580" y="300" text-anchor="middle" font-size="12" fill="#666">防冻采暖</text>
+
+        <!-- 医疗热水 -->
+        <rect x="660" y="220" width="100" height="70" rx="8" fill="#FFE8C8" stroke="#B8956A" stroke-width="1.5"/>
+        <text x="710" y="250" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A1A">医疗热水</text>
+        <text x="710" y="268" text-anchor="middle" font-size="11" fill="#5A3A1A">无菌热水</text>
+
+        <!-- 蓄热连接 -->
+        <line x1="540" y1="150" x2="540" y2="200" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="540" y1="200" x2="420" y2="220" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="60" y1="100" x2="120" y2="220" stroke="#7EB8D0" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="180" y1="255" x2="220" y2="255" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="320" y1="255" x2="360" y2="255" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="480" y1="245" x2="520" y2="225" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="480" y1="265" x2="520" y2="285" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="540" y1="255" x2="660" y2="255" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <!-- 多能互补保障 -->
+        <text x="20" y="370" font-size="14" font-weight="600" fill="#1A1A1A">多能互补保障</text>
+        <rect x="40" y="390" width="240" height="50" rx="8" fill="#FFF" stroke="#7CA87A" stroke-width="1.5"/>
+        <text x="160" y="412" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A1A">水管系统/污水罐</text>
+        <text x="160" y="428" text-anchor="middle" font-size="11" fill="#5A6B5E">防冻主回路热水源</text>
+
+        <!-- 底部备注 -->
+        <rect x="40" y="450" width="1020" height="0" fill="none"/>
+        <text x="550" y="445" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">完全零冻结风险 · 免日常维护 · 解决弃光 · 稳定微电网 · 全部为辅助循环</text>
+      </svg>
+    </div>
+
+    <!-- MgO 砖夹层图（SVG 自绘） -->
+    <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;margin-bottom:32px;">
+      <h4 style="font-size:15px;font-weight:600;margin-bottom:20px;color:var(--fg-primary);text-align:center;">蓄热体结构 · MgO 砖夹层示意</h4>
+      <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;height:auto;display:block;margin:0 auto;">
+        <defs>
+          <linearGradient id="mgo" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#E8E0D0"/><stop offset="1" stop-color="#C8B898"/></linearGradient>
+        </defs>
+        <!-- 3D 砖块层 -->
+        <g transform="translate(150,40)">
+          <!-- 砖块 1 -->
+          <rect x="0" y="0" width="500" height="40" fill="url(#mgo)" stroke="#7A6A4A" stroke-width="1.5"/>
+          <text x="250" y="25" text-anchor="middle" font-size="12" fill="#5A3A1A" font-weight="600">MgO 砖层 × N（蓄热主体）</text>
+          <!-- 砖块 2 -->
+          <rect x="0" y="50" width="500" height="40" fill="url(#mgo)" stroke="#7A6A4A" stroke-width="1.5"/>
+          <text x="250" y="75" text-anchor="middle" font-size="12" fill="#5A3A1A" font-weight="600">MgO 砖层 × N（蓄热主体）</text>
+          <!-- 砖块 3 -->
+          <rect x="0" y="100" width="500" height="40" fill="url(#mgo)" stroke="#7A6A4A" stroke-width="1.5"/>
+          <text x="250" y="125" text-anchor="middle" font-size="12" fill="#5A3A1A" font-weight="600">MgO 砖层 × N（蓄热主体）</text>
+          <!-- 砖块 4 -->
+          <rect x="0" y="150" width="500" height="40" fill="url(#mgo)" stroke="#7A6A4A" stroke-width="1.5"/>
+          <text x="250" y="175" text-anchor="middle" font-size="12" fill="#5A3A1A" font-weight="600">MgO 砖层 × N（蓄热主体）</text>
+
+          <!-- 标注：高度 H -->
+          <line x1="-15" y1="0" x2="-15" y2="190" stroke="#B8956A" stroke-width="1.5"/>
+          <line x1="-20" y1="0" x2="-10" y2="0" stroke="#B8956A" stroke-width="1.5"/>
+          <line x1="-20" y1="190" x2="-10" y2="190" stroke="#B8956A" stroke-width="1.5"/>
+          <text x="-30" y="100" text-anchor="middle" font-size="12" font-weight="600" fill="#B8956A">H</text>
+
+          <!-- 标注：宽度 W -->
+          <line x1="0" y1="210" x2="500" y2="210" stroke="#B8956A" stroke-width="1.5"/>
+          <line x1="0" y1="205" x2="0" y2="215" stroke="#B8956A" stroke-width="1.5"/>
+          <line x1="500" y1="205" x2="500" y2="215" stroke="#B8956A" stroke-width="1.5"/>
+          <text x="250" y="230" text-anchor="middle" font-size="12" font-weight="600" fill="#B8956A">W</text>
+
+          <!-- 标注：长度 L -->
+          <line x1="510" y1="0" x2="510" y2="190" stroke="#B8956A" stroke-width="1.5"/>
+          <line x1="505" y1="0" x2="515" y2="0" stroke="#B8956A" stroke-width="1.5"/>
+          <line x1="505" y1="190" x2="515" y2="190" stroke="#B8956A" stroke-width="1.5"/>
+          <text x="525" y="100" text-anchor="middle" font-size="12" font-weight="600" fill="#B8956A">L</text>
+        </g>
+        <text x="400" y="295" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">图：夹层 MgO 砖蓄热体结构 · 三维尺寸示意</text>
+      </svg>
+    </div>
+
+    <!-- ============== 2. 水循环处理系统 ============== -->
+    <h3 class="subsection-title">
+      <span class="num">2</span> 水循环处理系统设计 · 三级用水与分级回用
+    </h3>
+    <p style="font-size:14px;color:var(--fg-secondary);line-height:1.9;margin-bottom:16px;">
+      针对西藏那曲市高海拔极寒地区、无市政给水管网接入的 200 平方米小型医疗基站进行给排水设计。
+      系统采用 2-3 人常驻规模，集成雨水收集与三级用水（中水回用）技术，并将全部设备集成于地下室，
+      实现防冻保暖、零能耗下排水以及按需加压上供水。
+    </p>
+    <p style="font-size:14px;color:var(--fg-secondary);line-height:1.9;margin-bottom:24px;">
+      结合那曲当地极端气候，对常驻医护及流动患者进行用水定额计算。<strong>系统总给水量设计基准定为 10 m³/d，
+      实际每日产生污水量（需外运）约 0.63 m³/d</strong>。该方案的核心思想是<strong>极致地利用空间、分级提高效率、简化维护程序</strong>。
+      针对那曲市高海拔、极寒、无城市自来水管网的极端环境，设计了一套集成了夏季雨水收集、三级中水回用的地下室一体化水务系统。
+    </p>
+
+    <!-- 三级用水 -->
+    <h4 style="font-size:15px;font-weight:600;margin:24px 0 12px;color:var(--fg-primary);">三级用水与分级回用逻辑</h4>
+    <p style="font-size:14px;color:var(--fg-secondary);line-height:1.8;margin-bottom:16px;">
+      为最大化节约高原运水成本，系统对水资源进行精确的"灰黑分离"与循环利用：
+    </p>
+
+    <div class="water-grade">
+      <h5><span style="display:inline-block;width:24px;height:24px;line-height:24px;background:#7CA87A;color:#fff;border-radius:50%;text-align:center;font-size:12px;margin-right:8px;vertical-align:middle;">A</span> A 级水（生活原水）</h5>
+      <p>外部运水车补水与夏季屋顶收集雨水汇入，经超滤及紫外线杀菌后供日常饮用、配药、洗手及保洁。</p>
+    </div>
+    <div class="water-grade" style="border-left-color:#7EB8D0;">
+      <h5><span style="display:inline-block;width:24px;height:24px;line-height:24px;background:#7EB8D0;color:#fff;border-radius:50%;text-align:center;font-size:12px;margin-right:8px;vertical-align:middle;">B</span> B 级水（中水/灰水）</h5>
+      <p>一楼洗手池及擦拭废水经独立灰水管重力流至地下室，经过滤沉淀及消毒后进入中水箱，专门用于马桶冲厕。马桶冲厕所需的 420 L/h 完全由灰水循环提供，<strong>实现一楼原水节约近 36%</strong>。</p>
+    </div>
+    <div class="water-grade" style="border-left-color:#B33A2C;">
+      <h5><span style="display:inline-block;width:24px;height:24px;line-height:24px;background:#B33A2C;color:#fff;border-radius:50%;text-align:center;font-size:12px;margin-right:8px;vertical-align:middle;">C</span> C 级水（黑水/污水）</h5>
+      <p>冲厕后的重污染黑水直接重力下排至地下室密闭储罐，经高级消毒后定期由吸粪车外运。</p>
+    </div>
+
+    <!-- 水循环流程图 -->
+    <h4 style="font-size:15px;font-weight:600;margin:32px 0 16px;color:var(--fg-primary);text-align:center;">水循环系统流程图</h4>
+    <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px;margin-bottom:32px;">
+      <img src="images/optimized/water-cycle.png" alt="三级用水系统流程图" style="width:100%;border-radius:var(--radius-sm);" width="1408" height="768">
+      <p style="text-align:center;font-size:12px;color:var(--fg-muted);margin-top:12px;">那曲医疗基站给排水与三级用水系统设计 · 地下全设备集成版</p>
+    </div>
+
+    <!-- 用水项目表 + 设备尺寸表 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+      <div>
+        <h4 style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--fg-primary);">用水项目表（常驻 3 人 · 日门诊 15 人）</h4>
+        <div class="cost-table-wrapper">
+          <table class="cost-table" style="font-size:12px;">
+            <thead>
+              <tr><th>用水项目</th><th>设计标准</th><th>计算基数</th><th>日用水量</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>常驻医护生活</td><td>80 L/人·日</td><td>3 人</td><td class="cell-number">240 L</td></tr>
+              <tr><td>门诊患者卫生</td><td>10 L/人·次</td><td>15 人/日</td><td class="cell-number">150 L</td></tr>
+              <tr><td>医疗洗手池冲洗</td><td>15 L/个·日</td><td>3 个</td><td class="cell-number">45 L</td></tr>
+              <tr><td>地面与医疗擦拭</td><td>1.5 L/m²·日</td><td>200 m²</td><td class="cell-number">300 L</td></tr>
+              <tr><td>洗手间马桶冲厕</td><td>3.5 L/次</td><td>120 次/日</td><td class="cell-number">420 L</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--fg-primary);">设备尺寸表（地下室集成）</h4>
+        <div class="cost-table-wrapper">
+          <table class="cost-table" style="font-size:12px;">
+            <thead>
+              <tr><th>设备</th><th>规格</th><th>数量</th><th>价格(¥)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A 级蓄水箱</td><td>1.5×1.5×1.5 m³</td><td>1</td><td class="cell-number">4,500</td></tr>
+              <tr><td>一体化超滤净水机</td><td>0.6×0.4×1.2 m</td><td>1</td><td class="cell-number">12,000</td></tr>
+              <tr><td>灰水缓冲沉淀桶</td><td>0.8×0.5×0.8 m</td><td>1</td><td class="cell-number">3,200</td></tr>
+              <tr><td>B 级中水蓄水箱</td><td>1.0×0.5×1.0 m³</td><td>1</td><td class="cell-number">2,800</td></tr>
+              <tr><td>屋顶雨水收集筒</td><td>Φ0.11×1.6 m</td><td>1</td><td class="cell-number">1,500</td></tr>
+              <tr><td>C 级污水密闭储罐</td><td>2.2×1.5×1.5 m³</td><td>1</td><td class="cell-number">15,000</td></tr>
+              <tr><td>二氧化氯发生器</td><td>0.5×0.3×0.6 m</td><td>1</td><td class="cell-number">6,500</td></tr>
+              <tr><td>系统自动控制器</td><td>0.4×0.2×0.6 m</td><td>1</td><td class="cell-number">4,500</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">雪域阳光方舟</div>
+        <p class="footer-desc">高海拔极端环境乡村医疗服务基站<br>自保障建筑设计与建造研究</p>
+      </div>
+      <div class="footer-col">
+        <h4>研究模块</h4>
+        <a href="site.html">前期分析</a>
+        <a href="design.html">单体设计</a>
+        <a href="performance.html">性能分析</a>
+        <a href="self-sustaining.html">自保障设计</a>
+        <a href="construction.html">建造模拟</a>
+      </div>
+      <div class="footer-col">
+        <h4>项目信息</h4>
+        <a>学生：司徒瑞麒</a>
+        <a>学号：01121121</a>
+        <a>指导教师：张宏 / 张弦</a>
+        <a>时间：2026.02 — 2026.05</a>
+      </div>
+      <div class="footer-col">
+        <h4>技术支持</h4>
+        <a>Karamba3D · Grasshopper</a>
+        <a>Rhino · Revit · Lumion</a>
+        <a>Excel · Python</a>
+      </div>
+    </div>
+    <div class="footer-copyright">© 2026 东南大学 建筑学院 毕业设计答辩作品集</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('img').forEach(img => {
+      if (img.closest('.perf-card, .render-card, .drawing-img')) return;
+      img.addEventListener('click', () => {
+        const overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:32px;';
+        const big = document.createElement('img');
+        big.src = img.src;
+        big.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;';
+        overlay.appendChild(big);
+        overlay.addEventListener('click', () => overlay.remove());
+        document.body.appendChild(overlay);
+      });
+    });
+  </script>
+</body>
+</html>

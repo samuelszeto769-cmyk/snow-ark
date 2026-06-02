@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>性能分析 — 雪域阳光方舟</title>
+  <meta name="description" content="雪域阳光方舟 — 性能分析：结构优化、外围护节能、太阳能系统。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav" id="mainNav">
+    <a href="index.html" class="nav-brand">雪域阳光方舟</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="site.html" class="nav-link">前期分析</a>
+      <a href="design.html" class="nav-link">单体设计</a>
+      <a href="performance.html" class="nav-link active">性能分析</a>
+      <a href="self-sustaining.html" class="nav-link">自保障设计</a>
+      <a href="construction.html" class="nav-link">建造模拟</a>
+    </div>
+  </nav>
+
+  <div style="height:64px;"></div>
+
+  <section class="page-container">
+    <h2 class="section-title">性能分析</h2>
+    <p class="section-subtitle">结构优化 · 外围护节能 · 太阳能系统 · 三位一体的性能闭环</p>
+
+    <!-- ============== 1. 结构优化 ============== -->
+    <div class="perf-section">
+      <h3>
+        <span style="display:inline-block;width:28px;height:28px;line-height:28px;background:var(--accent);color:#fff;border-radius:50%;text-align:center;font-size:13px;margin-right:8px;vertical-align:middle;">1</span>
+        结构优化 · 通过 Karamba3D 加固桁架系统中薄弱的环节
+      </h3>
+      <p class="perf-subtitle">
+        利用 Karamba3D 对主体桁架系统进行有限元分析，通过 Grasshopper 节点程序读取构件利用率（utilization），
+        识别应力/位移超限的薄弱环节并进行加强设计。模型显示原结构存在 25% 杆件利用率偏低、需通过杆件加密或截面增大提升整体刚度。
+      </p>
+
+      <div class="perf-grid cols-3">
+        <div class="perf-card">
+          <img src="images/optimized/karamba-structure.png" alt="Karamba3D 结构分析 1" width="1920" height="960">
+          <div class="perf-caption">Karamba3D 模型 · 利用率分布（左侧）</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/gh-thermal-1.png" alt="GH 节点图 1 - 应力读取" loading="lazy" width="2169" height="1090">
+          <div class="perf-caption">Grasshopper 节点 · 应力读取</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/gh-thermal-2.png" alt="GH 节点图 2 - 位移读取" loading="lazy" width="2560" height="1154">
+          <div class="perf-caption">Grasshopper 节点 · 位移读取</div>
+        </div>
+      </div>
+
+      <div class="info-bar" style="margin-top:20px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span>优化方向：识别 Utilization &gt; 1.0 的薄弱杆件 → 加密次梁 / 增大截面 / 增加斜撑。</span>
+      </div>
+    </div>
+
+    <!-- ============== 2. 外围护结构节能 ============== -->
+    <div class="perf-section">
+      <h3>
+        <span style="display:inline-block;width:28px;height:28px;line-height:28px;background:var(--accent);color:#fff;border-radius:50%;text-align:center;font-size:13px;margin-right:8px;vertical-align:middle;">2</span>
+        外围护结构节能计算与优化
+      </h3>
+      <p class="perf-subtitle">
+        通过 Grasshopper 多目标优化（GH 电池 + Excel 求解器），拟合在该场地气候条件下围护系统的<strong>保温厚度与能耗的关系曲线</strong>，
+        找到较为合理的构造数值。结论：12+150+12 mm 夹芯板（面层 12mm + 岩棉 150mm + 内层 12mm）为本场地最优解。
+      </p>
+
+      <div class="perf-grid cols-2">
+        <div class="perf-card">
+          <img src="images/optimized/gh-thermal-general.png" alt="GH 完整节点流程" loading="lazy" width="2321" height="1104">
+          <div class="perf-caption">Grasshopper 多目标优化 · 完整流程</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/thermal-diagram.png" alt="能耗分析图" loading="lazy" width="1943" height="1147">
+          <div class="perf-caption">围护结构全年能耗分析</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/annual-load-1.png" alt="年度负荷 1" loading="lazy" width="2218" height="1091">
+          <div class="perf-caption">年度冷热负荷曲线 1</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/annual-load-2.png" alt="年度负荷 2" loading="lazy" width="2218" height="1091">
+          <div class="perf-caption">年度冷热负荷曲线 2</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/peak-loads.png" alt="峰值负荷" loading="lazy" width="2218" height="1091">
+          <div class="perf-caption">峰值负荷分析</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/heating-data.png" alt="采暖数据" loading="lazy" width="2218" height="1091">
+          <div class="perf-caption">采暖能耗数据 (SQI)</div>
+        </div>
+      </div>
+
+      <div class="kpi-grid" style="margin-top:24px;">
+        <div class="kpi-card">
+          <div class="kpi-value">150</div>
+          <div class="kpi-label">岩棉厚度 (mm)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">0.22</div>
+          <div class="kpi-label">K值 W/(m²·K)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">12+12</div>
+          <div class="kpi-label">面层钢板 (mm)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">↓ 36%</div>
+          <div class="kpi-label">能耗降低</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== 3. 太阳能系统优化 ============== -->
+    <div class="perf-section">
+      <h3>
+        <span style="display:inline-block;width:28px;height:28px;line-height:28px;background:var(--accent);color:#fff;border-radius:50%;text-align:center;font-size:13px;margin-right:8px;vertical-align:middle;">3</span>
+        太阳能系统优化 · 通过遗传算法计算最佳放置角度和仰角
+      </h3>
+      <p class="perf-subtitle">
+        利用 <strong>Galapagos 遗传算法</strong> 对太阳能光伏板在 3 种典型布局方式下的最佳放置角度和仰角进行计算，
+        得出辐射量最大化的板面朝向方案。优化结果显示：<strong>type2 布局（屋顶双坡对称）+ 30°倾角</strong> 为本场地最优解。
+      </p>
+
+      <div class="perf-grid cols-2">
+        <div class="perf-card">
+          <img src="images/optimized/galapagos.png" alt="Galapagos 遗传算法" loading="lazy" width="2560" height="1098">
+          <div class="perf-caption">Galapagos 遗传算法 · 多代种群收敛</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/rad-type1-result.png" alt="type1 辐射结果" loading="lazy" width="2560" height="1098">
+          <div class="perf-caption">布局 1 · 辐射量计算结果</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/rad-type2-result.png" alt="type2 辐射结果" loading="lazy" width="2560" height="1098">
+          <div class="perf-caption">布局 2 · 辐射量计算结果（最优）</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/rad-type3-result.png" alt="type3 辐射结果" loading="lazy" width="2560" height="1098">
+          <div class="perf-caption">布局 3 · 辐射量计算结果</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/rad-type1-angle.png" alt="type1 角度" loading="lazy" width="2560" height="1098">
+          <div class="perf-caption">布局 1 · 最佳角度 (°)</div>
+        </div>
+        <div class="perf-card">
+          <img src="images/optimized/rad-type2-angle.png" alt="type2 角度" loading="lazy" width="2560" height="1098">
+          <div class="perf-caption">布局 2 · 最佳角度 (°)</div>
+        </div>
+      </div>
+
+      <div class="info-bar" style="margin-top:20px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span>优化结论：屋顶双坡 + 30° 倾角 → 年辐射量最大化 → 蓄热 48,000 kWh（详见"自保障设计"页）。</span>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">雪域阳光方舟</div>
+        <p class="footer-desc">高海拔极端环境乡村医疗服务基站<br>自保障建筑设计与建造研究</p>
+      </div>
+      <div class="footer-col">
+        <h4>研究模块</h4>
+        <a href="site.html">前期分析</a>
+        <a href="design.html">单体设计</a>
+        <a href="performance.html">性能分析</a>
+        <a href="self-sustaining.html">自保障设计</a>
+        <a href="construction.html">建造模拟</a>
+      </div>
+      <div class="footer-col">
+        <h4>项目信息</h4>
+        <a>学生：司徒瑞麒</a>
+        <a>学号：01121121</a>
+        <a>指导教师：张宏 / 张弦</a>
+        <a>时间：2026.02 — 2026.05</a>
+      </div>
+      <div class="footer-col">
+        <h4>技术支持</h4>
+        <a>Karamba3D · Grasshopper</a>
+        <a>Rhino · Revit · Lumion</a>
+        <a>Excel · Python</a>
+      </div>
+    </div>
+    <div class="footer-copyright">© 2026 东南大学 建筑学院 毕业设计答辩作品集</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.perf-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        const overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:32px;';
+        const big = document.createElement('img');
+        big.src = img.src;
+        big.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;';
+        overlay.appendChild(big);
+        overlay.addEventListener('click', () => overlay.remove());
+        document.body.appendChild(overlay);
+      });
+    });
+  </script>
+</body>
+</html>
