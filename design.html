@@ -13,7 +13,7 @@
 <body>
 
   <nav class="nav" id="mainNav">
-    <a href="index.html" class="nav-brand">雪域阳光方舟</a>
+    <a href="index.html" class="nav-brand"><img src="images/optimized/logo.png" alt="Logo" class="logo" width="32" height="32">雪域阳光方舟</a>
     <div class="nav-links">
       <a href="index.html" class="nav-link">首页</a>
       <a href="site.html" class="nav-link">前期分析</a>
@@ -50,15 +50,15 @@
         <div class="render-caption">建筑主体鸟瞰图 · 高原雪域中的方盒子</div>
       </div>
       <div class="render-card">
-        <img src="images/optimized/human-view.png" alt="建筑主体人眼透视图" loading="lazy" width="1920" height="1218">
+        <img src="images/human-view-gpt.png" alt="建筑主体人眼透视图" loading="lazy" width="1920" height="1218">
         <div class="render-caption">建筑主体人眼透视图 · 周边环境融合</div>
       </div>
       <div class="render-card">
-        <img src="images/optimized/interior-1.png" alt="室内透视图 1 - 诊疗区" loading="lazy" width="1920" height="1218">
+        <img src="images/室内1.2.jpg" alt="室内透视图 1 - 诊疗区" loading="lazy" width="1920" height="1218">
         <div class="render-caption">室内透视图 · 阳光中庭与诊疗区</div>
       </div>
       <div class="render-card">
-        <img src="images/optimized/interior-2.png" alt="室内透视图 2 - 健康教育区" loading="lazy" width="1920" height="1217">
+        <img src="images/render-cgpt-2.png" alt="室内透视图 2 - 健康教育区" loading="lazy" width="1920" height="1217">
         <div class="render-caption">室内透视图 · 藏式文化回应</div>
       </div>
     </div>
@@ -73,7 +73,7 @@
       <!-- 1. 总平面图 -->
       <div class="drawing-item">
         <div class="drawing-img">
-          <img src="images/optimized/master-plan.jpg" alt="总平面图" loading="lazy" width="1920" height="1084">
+          <img src="images/masterplan_1.jpg" alt="总平面图" loading="lazy" width="1920" height="1084">
         </div>
         <div class="drawing-info">
           <div class="drawing-meta">DRAWING · 01</div>
@@ -86,7 +86,7 @@
       <!-- 2. 一层平面图 -->
       <div class="drawing-item reverse">
         <div class="drawing-img">
-          <img src="images/optimized/floor-plan.jpg" alt="一层平面图" loading="lazy" width="1358" height="1920">
+          <img src="images/firstfloorplan.png" alt="一层平面图" loading="lazy" width="1358" height="1920">
         </div>
         <div class="drawing-info">
           <div class="drawing-meta">DRAWING · 02</div>
@@ -99,7 +99,7 @@
       <!-- 3. 剖面图 -->
       <div class="drawing-item">
         <div class="drawing-img">
-          <img src="images/optimized/section.jpg" alt="剖面图" loading="lazy" width="1358" height="1920">
+          <img src="images/剖面1.png" alt="剖面图" loading="lazy" width="1358" height="1920">
         </div>
         <div class="drawing-info">
           <div class="drawing-meta">DRAWING · 03</div>
@@ -112,7 +112,7 @@
       <!-- 4. 西立面图 -->
       <div class="drawing-item reverse">
         <div class="drawing-img">
-          <img src="images/optimized/elevation-1.jpg" alt="西立面图" loading="lazy" width="1920" height="1152">
+          <img src="images/westfasade.png" alt="西立面图" loading="lazy" width="1920" height="1152">
         </div>
         <div class="drawing-info">
           <div class="drawing-meta">DRAWING · 04</div>
@@ -125,7 +125,7 @@
       <!-- 5. 北立面图 -->
       <div class="drawing-item">
         <div class="drawing-img">
-          <img src="images/optimized/elevation-2.jpg" alt="北立面图" loading="lazy" width="1920" height="1154">
+          <img src="images/northfasade.png" alt="北立面图" loading="lazy" width="1920" height="1154">
         </div>
         <div class="drawing-info">
           <div class="drawing-meta">DRAWING · 05</div>
@@ -135,16 +135,22 @@
         </div>
       </div>
 
-      <!-- 6. 窗墙大样 -->
-      <div class="drawing-item reverse">
-        <div class="drawing-img">
-          <img src="images/optimized/window-detail-1.jpg" alt="窗墙大样图" loading="lazy" width="1357" height="1920">
-        </div>
+      <!-- 6. 窗墙大样 — 四宫格布局 -->
+      <div class="drawing-item quad">
         <div class="drawing-info">
           <div class="drawing-meta">DRAWING · 06</div>
           <h4>窗墙大样</h4>
           <p>围护结构通过 <strong>Grasshopper 多目标优化</strong>，拟合在该场地气候条件下围护系统的保温厚度与能耗的关系曲线，找到较为合理的构造数值。</p>
           <p>窗墙构造：<strong>3mm 钢板挑檐 + 三玻两腔 low-e 玻璃窗</strong>，<strong>12+150+12mm 夹芯板</strong>（面层 12mm + 岩棉 150mm + 内层 12mm）。<strong>设计了咬合的连接构造</strong>，最大限度减少冷桥的形成。</p>
+        </div>
+        <div class="drawing-img">
+          <img src="images/optimized/0529-explosion.png" alt="窗墙大样图" loading="lazy" width="1357" height="1920">
+        </div>
+        <div class="drawing-img">
+          <img src="images/墙构造.png" alt="0529 爆炸图" loading="lazy" width="2560" height="1349">
+        </div>
+        <div class="drawing-img">
+          <img src="images/optimized/chuang-gouzao.png" alt="窗构造详图" loading="lazy" width="1414" height="1414">
         </div>
       </div>
 
@@ -188,10 +194,10 @@
     document.querySelectorAll('.render-card img, .drawing-img img').forEach(img => {
       img.addEventListener('click', () => {
         const overlay = document.createElement('div');
-        overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:32px;';
+        overlay.style.cssText = 'position:fixed;inset:0;background:#FFFFFF;z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:32px;';
         const big = document.createElement('img');
         big.src = img.src;
-        big.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.5);';
+        big.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;background:#FFFFFF;padding:16px;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.15);';
         overlay.appendChild(big);
         overlay.addEventListener('click', () => overlay.remove());
         document.body.appendChild(overlay);

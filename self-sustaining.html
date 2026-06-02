@@ -13,7 +13,7 @@
 <body>
 
   <nav class="nav" id="mainNav">
-    <a href="index.html" class="nav-brand">雪域阳光方舟</a>
+    <a href="index.html" class="nav-brand"><img src="images/optimized/logo.png" alt="Logo" class="logo" width="32" height="32">雪域阳光方舟</a>
     <div class="nav-links">
       <a href="index.html" class="nav-link">首页</a>
       <a href="site.html" class="nav-link">前期分析</a>
@@ -66,100 +66,211 @@
       关键优势：完全零冻结风险 · 免日常维护 · 解决弃光 · 稳定微电网
     </div>
 
-    <!-- 能源系统流程图（SVG 自绘） -->
+    <!-- 能源系统流程图 · Lucide 图标增强版（v2 精简） -->
     <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;margin-bottom:32px;">
       <h4 style="font-size:15px;font-weight:600;margin-bottom:20px;color:var(--fg-primary);text-align:center;">能源系统流程图 · 地下全集成</h4>
-      <svg viewBox="0 0 1100 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-        <!-- 定义 -->
+      <svg viewBox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:'Inter','Noto Sans SC',sans-serif;">
+
         <defs>
-          <linearGradient id="solar" x1="0" x2="1"><stop offset="0" stop-color="#FFD27A"/><stop offset="1" stop-color="#FFA94D"/></linearGradient>
-          <linearGradient id="storage" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#B8956A"/><stop offset="1" stop-color="#7A5A3A"/></linearGradient>
-          <linearGradient id="air" x1="0" x2="1"><stop offset="0" stop-color="#7EB8D0"/><stop offset="1" stop-color="#5A9FBF"/></linearGradient>
-          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#B8956A"/>
+          <linearGradient id="solar" x1="0" x2="1"><stop offset="0" stop-color="#FFE0A8"/><stop offset="1" stop-color="#FFA94D"/></linearGradient>
+          <linearGradient id="storage" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#C8A57A"/><stop offset="1" stop-color="#6A4A2A"/></linearGradient>
+          <linearGradient id="air" x1="0" x2="1"><stop offset="0" stop-color="#9ED0E0"/><stop offset="1" stop-color="#5A9FBF"/></linearGradient>
+          <linearGradient id="arr-amber" x1="0" x2="1"><stop offset="0" stop-color="#D4B896"/><stop offset="1" stop-color="#B8956A"/></linearGradient>
+          <linearGradient id="arr-cyan" x1="0" x2="1"><stop offset="0" stop-color="#9ED0E0"/><stop offset="1" stop-color="#5A9FBF"/></linearGradient>
+          <filter id="soft-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="2" result="off"/>
+            <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+            <path d="M0,0 L12,6 L0,12 L3,6 z" fill="#B8956A"/>
+          </marker>
+          <marker id="arrow-cyan" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+            <path d="M0,0 L12,6 L0,12 L3,6 z" fill="#5A9FBF"/>
           </marker>
         </defs>
 
-        <!-- 白天储能（顶行） -->
-        <text x="20" y="30" font-size="14" font-weight="600" fill="#1A1A1A">能量转化与收集（白天储能）</text>
+        <!-- ============ 区域标题（更紧凑） ============ -->
+        <g>
+          <text x="40" y="32" font-size="13" font-weight="700" fill="#1A1A1A" letter-spacing="0.5">☀ 白天储能</text>
+          <line x1="130" y1="28" x2="800" y2="28" stroke="#FFD27A" stroke-width="2"/>
+        </g>
+        <g>
+          <text x="40" y="232" font-size="13" font-weight="700" fill="#1A1A1A" letter-spacing="0.5">🌙 夜间释放</text>
+          <line x1="130" y1="228" x2="1060" y2="228" stroke="#7EB8D0" stroke-width="2"/>
+        </g>
 
-        <!-- 光伏/光热板 -->
-        <rect x="40" y="60" width="140" height="80" rx="8" fill="url(#solar)" stroke="#B8956A" stroke-width="2"/>
-        <text x="110" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#5A3A1A">光伏/光热板</text>
-        <text x="110" y="120" text-anchor="middle" font-size="11" fill="#5A3A1A">屋顶</text>
+        <!-- 图例（右上角，1 行） -->
+        <g transform="translate(820, 12)">
+          <line x1="0" y1="16" x2="28" y2="16" stroke="url(#arr-amber)" stroke-width="2.5" marker-end="url(#arrow)"/>
+          <text x="34" y="20" font-size="10" fill="#6B7280">主能量流</text>
+          <line x1="100" y1="16" x2="128" y2="16" stroke="url(#arr-cyan)" stroke-width="2" stroke-dasharray="3,2" marker-end="url(#arrow-cyan)"/>
+          <text x="134" y="20" font-size="10" fill="#6B7280">回风循环</text>
+        </g>
 
-        <!-- 光热逆变器 -->
-        <rect x="240" y="60" width="100" height="80" rx="8" fill="#E5E7EB" stroke="#999" stroke-width="1.5"/>
-        <text x="290" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#333">光热逆变器</text>
-        <text x="290" y="120" text-anchor="middle" font-size="11" fill="#666">电加热转化</text>
+        <!-- ============ 白天：光伏/光热板 ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="40" y="60" width="160" height="80" rx="12" fill="url(#solar)" stroke="#B8956A" stroke-width="2"/>
+          <g transform="translate(58, 88)" stroke="#5A3A1A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </g>
+          <text x="148" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#5A3A1A">光伏 / 光热板</text>
+          <text x="148" y="106" text-anchor="middle" font-size="10" fill="#7A4A1A" opacity="0.85">屋顶部署</text>
+          <text x="148" y="128" text-anchor="middle" font-size="9" font-weight="600" fill="#7A4A1A" opacity="0.6" letter-spacing="1">CAPTURE</text>
+        </g>
 
-        <!-- 蓄热体（中央大块） -->
-        <rect x="400" y="50" width="280" height="100" rx="8" fill="url(#storage)" stroke="#5A3A1A" stroke-width="2"/>
-        <text x="540" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#FFF">9m×9m 高密度固体蓄热矩阵</text>
-        <text x="540" y="108" text-anchor="middle" font-size="12" fill="#FFF">128m³ / 384 吨</text>
-        <text x="540" y="128" text-anchor="middle" font-size="11" fill="#FFE8C8">白天蓄热 50°C → 极限热温 500°C</text>
+        <!-- ============ 白天：光热逆变器 ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="240" y="60" width="120" height="80" rx="12" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2"/>
+          <g transform="translate(258, 88)" fill="#F59E0B" stroke="#F59E0B" stroke-width="1.5" stroke-linejoin="round">
+            <path d="M13 2L3 14h7l-2 8 10-12h-7l2-8z"/>
+          </g>
+          <text x="320" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">光热逆变器</text>
+          <text x="320" y="106" text-anchor="middle" font-size="10" fill="#6B7280">电加热转化</text>
+          <text x="320" y="128" text-anchor="middle" font-size="9" font-weight="600" fill="#6B7280" opacity="0.6" letter-spacing="1">CONVERT</text>
+        </g>
 
-        <!-- 蓄热保温层标注 -->
-        <text x="700" y="80" font-size="12" fill="#5A3A1A" font-weight="500">500mm</text>
-        <text x="700" y="95" font-size="11" fill="#5A3A1A">超绝热保温层</text>
-        <text x="700" y="125" font-size="12" font-weight="600" fill="#B8956A">Q ≈ 48,000 kWh</text>
+        <!-- ============ 白天：核心蓄热矩阵（大节点） ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="400" y="50" width="300" height="100" rx="14" fill="url(#storage)" stroke="#5A3A1A" stroke-width="2.5"/>
+          <g transform="translate(420, 80)" fill="#FFE8C8" stroke="#FFE8C8" stroke-width="1" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+          </g>
+          <text x="560" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#FFF">9m × 9m 固体蓄热矩阵</text>
+          <text x="560" y="100" text-anchor="middle" font-size="12" fill="#FFE8C8" font-weight="600">128 m³  /  384 吨  /  Q ≈ 48,000 kWh</text>
+          <text x="560" y="120" text-anchor="middle" font-size="10" fill="#FFE8C8" opacity="0.85">白天蓄热 50°C → 极限 500°C  ·  500mm 保温层</text>
+          <text x="560" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#FFE8C8" opacity="0.5" letter-spacing="1.5">STORAGE</text>
+        </g>
 
-        <!-- 箭头连接 -->
-        <line x1="180" y1="100" x2="240" y2="100" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="340" y1="100" x2="400" y2="100" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <!-- ============ 白天：多能互补（右上角，缩短距离） ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="750" y="60" width="290" height="80" rx="12" fill="#FFFFFF" stroke="#7CA87A" stroke-width="2" stroke-dasharray="6,3"/>
+          <g transform="translate(770, 80)" fill="none" stroke="#7CA87A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </g>
+          <text x="900" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">水管系统 / 污水罐</text>
+          <text x="900" y="110" text-anchor="middle" font-size="10" fill="#5A6B5E">防冻主回路热水源 · 长期不冻</text>
+          <text x="900" y="128" text-anchor="middle" font-size="9" font-weight="600" fill="#7CA87A" opacity="0.7" letter-spacing="1">SUPPORT</text>
+        </g>
 
-        <!-- 夜间释放（底行） -->
-        <text x="20" y="190" font-size="14" font-weight="600" fill="#1A1A1A">能量释放与应用（夜间/极寒时段）</text>
+        <!-- 白天 → 蓄热 -->
+        <line x1="200" y1="100" x2="238" y2="100" stroke="url(#arr-amber)" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="360" y1="100" x2="398" y2="100" stroke="url(#arr-amber)" stroke-width="2.5" marker-end="url(#arrow)"/>
 
-        <!-- 中央风机+混风阀 -->
-        <rect x="60" y="220" width="120" height="70" rx="8" fill="url(#air)" stroke="#5A9FBF" stroke-width="2"/>
-        <text x="120" y="252" text-anchor="middle" font-size="12" font-weight="600" fill="#FFF">中央风机+</text>
-        <text x="120" y="270" text-anchor="middle" font-size="12" font-weight="600" fill="#FFF">风道系统</text>
+        <!-- 蓄热 → 多能互补（短连接） -->
+        <line x1="700" y1="100" x2="748" y2="100" stroke="url(#arr-amber)" stroke-width="2.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <text x="724" y="92" font-size="9" font-weight="600" fill="#7CA87A" text-anchor="middle">辅助</text>
 
-        <!-- 混风阀 -->
-        <rect x="220" y="220" width="100" height="70" rx="8" fill="#E5E7EB" stroke="#999" stroke-width="1.5"/>
-        <text x="270" y="252" text-anchor="middle" font-size="12" font-weight="600" fill="#333">混风阀调节</text>
-        <text x="270" y="270" text-anchor="middle" font-size="11" fill="#666">温风调节</text>
+        <!-- ============ 夜间：中央风机 ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="60" y="260" width="130" height="80" rx="12" fill="url(#air)" stroke="#5A9FBF" stroke-width="2"/>
+          <g transform="translate(78, 288)" fill="none" stroke="#FFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.713l.06-.1a6.082 6.082 0 0 1 8.618 7.713l-.06.1z"/>
+            <path d="M16.379 10.827a6.082 6.082 0 0 1-7.713 8.618l-.1-.06a6.082 6.082 0 0 1 7.713-8.618l.1.06z"/>
+            <path d="M10.827 7.621a6.082 6.082 0 0 1 8.618 7.713l-.06.1a6.082 6.082 0 0 1-8.618-7.713l.06-.1z"/>
+            <path d="M7.621 13.173a6.082 6.082 0 0 1 7.713-8.618l.1.06a6.082 6.082 0 0 1-7.713 8.618l-.1-.06z"/>
+            <circle cx="12" cy="12" r="1.5" fill="#FFF"/>
+          </g>
+          <text x="135" y="286" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF">中央风机</text>
+          <text x="135" y="306" text-anchor="middle" font-size="10" fill="#E0F0F8">+ 风道系统</text>
+          <text x="135" y="328" text-anchor="middle" font-size="9" font-weight="600" fill="#E0F0F8" opacity="0.85" letter-spacing="1">DISTRIBUTE</text>
+        </g>
 
-        <!-- 空气预热盘管 -->
-        <rect x="360" y="220" width="120" height="70" rx="8" fill="url(#storage)" stroke="#5A3A1A" stroke-width="2"/>
-        <text x="420" y="252" text-anchor="middle" font-size="12" font-weight="600" fill="#FFF">空气预热盘管</text>
-        <text x="420" y="270" text-anchor="middle" font-size="11" fill="#FFE8C8">混风调节至 45°C</text>
+        <!-- ============ 夜间：混风阀 ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="240" y="260" width="110" height="80" rx="12" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2"/>
+          <g transform="translate(258, 288)" fill="none" stroke="#5A3A1A" stroke-width="1.8" stroke-linecap="round">
+            <line x1="0" y1="6" x2="20" y2="6"/>
+            <circle cx="14" cy="6" r="2.5" fill="#FFF" stroke="#5A3A1A"/>
+            <line x1="0" y1="14" x2="20" y2="14"/>
+            <circle cx="6" cy="14" r="2.5" fill="#FFF" stroke="#5A3A1A"/>
+            <line x1="0" y1="22" x2="20" y2="22"/>
+            <circle cx="18" cy="22" r="2.5" fill="#FFF" stroke="#5A3A1A"/>
+          </g>
+          <text x="305" y="286" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">混风阀</text>
+          <text x="305" y="306" text-anchor="middle" font-size="10" fill="#6B7280">温风调节</text>
+        </g>
 
-        <!-- 一楼采暖 -->
-        <rect x="520" y="200" width="120" height="50" rx="8" fill="#FFF" stroke="#B8956A" stroke-width="1.5"/>
-        <text x="580" y="222" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A1A">医疗基站</text>
-        <text x="580" y="240" text-anchor="middle" font-size="12" fill="#666">一楼采暖</text>
+        <!-- ============ 夜间：空气预热盘管 ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="400" y="260" width="140" height="80" rx="12" fill="url(#storage)" stroke="#5A3A1A" stroke-width="2"/>
+          <g transform="translate(420, 288)" fill="none" stroke="#FFE8C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+            <line x1="11.5" y1="9" x2="11.5" y2="13"/>
+          </g>
+          <text x="478" y="286" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF">空气预热盘管</text>
+          <text x="478" y="306" text-anchor="middle" font-size="10" fill="#FFE8C8">混风至 45°C</text>
+        </g>
 
-        <!-- 洗手间防冻 -->
-        <rect x="520" y="260" width="120" height="50" rx="8" fill="#FFF" stroke="#B8956A" stroke-width="1.5"/>
-        <text x="580" y="282" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A1A">洗手间</text>
-        <text x="580" y="300" text-anchor="middle" font-size="12" fill="#666">防冻采暖</text>
+        <!-- ============ 夜间：医疗基站（采暖） ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="600" y="250" width="130" height="38" rx="10" fill="#FFF" stroke="#B8956A" stroke-width="2"/>
+          <g transform="translate(612, 260)" fill="none" stroke="#B8956A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18z"/>
+            <path d="M2 22h20M10 6h4M10 10h4M10 14h4M10 18h4"/>
+          </g>
+          <text x="675" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#1A1A1A">医疗基站</text>
+          <text x="675" y="282" text-anchor="middle" font-size="9" fill="#6B7280">一楼采暖 22°C</text>
+        </g>
 
-        <!-- 医疗热水 -->
-        <rect x="660" y="220" width="100" height="70" rx="8" fill="#FFE8C8" stroke="#B8956A" stroke-width="1.5"/>
-        <text x="710" y="250" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A1A">医疗热水</text>
-        <text x="710" y="268" text-anchor="middle" font-size="11" fill="#5A3A1A">无菌热水</text>
+        <!-- ============ 夜间：洗手间（防冻） ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="600" y="298" width="130" height="38" rx="10" fill="#FFF" stroke="#B8956A" stroke-width="2"/>
+          <g transform="translate(612, 308)" fill="none" stroke="#5A9FBF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="10" y1="2" x2="10" y2="18"/>
+            <line x1="2" y1="10" x2="18" y2="10"/>
+            <line x1="5" y1="5" x2="15" y2="15"/>
+            <line x1="5" y1="15" x2="15" y2="5"/>
+          </g>
+          <text x="675" y="318" text-anchor="middle" font-size="12" font-weight="700" fill="#1A1A1A">洗手间</text>
+          <text x="675" y="330" text-anchor="middle" font-size="9" fill="#6B7280">防冻采暖 12°C</text>
+        </g>
 
-        <!-- 蓄热连接 -->
-        <line x1="540" y1="150" x2="540" y2="200" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="540" y1="200" x2="420" y2="220" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="60" y1="100" x2="120" y2="220" stroke="#7EB8D0" stroke-width="1.5" stroke-dasharray="4,3"/>
-        <line x1="180" y1="255" x2="220" y2="255" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="320" y1="255" x2="360" y2="255" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="480" y1="245" x2="520" y2="225" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="480" y1="265" x2="520" y2="285" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="540" y1="255" x2="660" y2="255" stroke="#B8956A" stroke-width="2" marker-end="url(#arrow)"/>
+        <!-- ============ 夜间：医疗热水 ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="790" y="260" width="120" height="80" rx="12" fill="#FFE8C8" stroke="#B8956A" stroke-width="2"/>
+          <g transform="translate(810, 288)" fill="none" stroke="#FFA94D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </g>
+          <text x="860" y="286" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">医疗热水</text>
+          <text x="860" y="306" text-anchor="middle" font-size="10" fill="#5A3A1A">无菌  55°C</text>
+        </g>
 
-        <!-- 多能互补保障 -->
-        <text x="20" y="370" font-size="14" font-weight="600" fill="#1A1A1A">多能互补保障</text>
-        <rect x="40" y="390" width="240" height="50" rx="8" fill="#FFF" stroke="#7CA87A" stroke-width="1.5"/>
-        <text x="160" y="412" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A1A">水管系统/污水罐</text>
-        <text x="160" y="428" text-anchor="middle" font-size="11" fill="#5A6B5E">防冻主回路热水源</text>
+        <!-- ============ 夜间：医疗热水（独立） ============ -->
+        <g filter="url(#soft-shadow)">
+          <rect x="950" y="260" width="90" height="80" rx="12" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4,2"/>
+          <text x="995" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#1A1A1A">系统</text>
+          <text x="995" y="310" text-anchor="middle" font-size="12" font-weight="700" fill="#1A1A1A">优势</text>
+          <text x="995" y="328" text-anchor="middle" font-size="9" fill="#6B7280">零冻结</text>
+        </g>
 
-        <!-- 底部备注 -->
-        <rect x="40" y="450" width="1020" height="0" fill="none"/>
-        <text x="550" y="445" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">完全零冻结风险 · 免日常维护 · 解决弃光 · 稳定微电网 · 全部为辅助循环</text>
+        <!-- ============ 连接线：蓄热 → 风机（短、直） ============ -->
+        <path d="M 470 150 L 470 200 L 130 200 L 130 258" fill="none" stroke="url(#arr-amber)" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <text x="478" y="178" font-size="10" font-weight="600" fill="#B8956A">热风</text>
+
+        <!-- 风机 → 混风阀 -->
+        <line x1="190" y1="300" x2="238" y2="300" stroke="url(#arr-amber)" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+        <!-- 混风阀 → 预热盘管 -->
+        <line x1="350" y1="300" x2="398" y2="300" stroke="url(#arr-amber)" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+        <!-- 预热盘管 → 医疗基站 + 洗手间（清晰分叉） -->
+        <path d="M 540 290 Q 575 290 598 269" fill="none" stroke="url(#arr-amber)" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <path d="M 540 310 Q 575 310 598 317" fill="none" stroke="url(#arr-amber)" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+        <!-- 蓄热 → 医疗热水（短弧就近） -->
+        <path d="M 600 150 Q 700 200 850 258" fill="none" stroke="url(#arr-amber)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <text x="730" y="180" font-size="9" font-weight="600" fill="#B8956A" opacity="0.7">辅助热源</text>
+
+        <!-- 洗手间 → 医疗热水 (回风) -->
+        <path d="M 730 317 Q 780 380 850 350" fill="none" stroke="url(#arr-cyan)" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.6" marker-end="url(#arrow-cyan)"/>
+
+        <!-- 医疗热水 → 系统优势（虚线指向） -->
+        <line x1="910" y1="300" x2="948" y2="300" stroke="url(#arr-cyan)" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.5" marker-end="url(#arrow-cyan)"/>
+
       </svg>
     </div>
 
@@ -246,6 +357,13 @@
     <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px;margin-bottom:32px;">
       <img src="images/optimized/water-cycle.png" alt="三级用水系统流程图" style="width:100%;border-radius:var(--radius-sm);" width="1408" height="768">
       <p style="text-align:center;font-size:12px;color:var(--fg-muted);margin-top:12px;">那曲医疗基站给排水与三级用水系统设计 · 地下全设备集成版</p>
+    </div>
+
+    <!-- 实际建造水处理设备连接图 -->
+    <h4 style="font-size:15px;font-weight:600;margin:8px 0 16px;color:var(--fg-primary);text-align:center;">实际建造过程中的水处理设备连接关系</h4>
+    <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px;margin-bottom:32px;">
+      <img src="images/optimized/f34c208375dd9946565579378a7d5f26.png" alt="实际建造水处理设备连接图" style="width:100%;border-radius:var(--radius-sm);" width="2181" height="1142">
+      <p style="text-align:center;font-size:12px;color:var(--fg-muted);margin-top:12px;">水处理设备实物连接 · 现场建造过程记录</p>
     </div>
 
     <!-- 用水项目表 + 设备尺寸表 -->

@@ -27,7 +27,7 @@
   --radius-pill: 999px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.15s ease;
-  --max-width: 1280px;
+  --max-width: 1600px;
   --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -91,17 +91,19 @@ a {
   color: var(--fg-primary);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.nav-brand::before {
-  content: '';
+.nav-brand .logo {
   display: inline-block;
-  width: 28px;
-  height: 28px;
-  background: var(--accent);
-  border-radius: 6px;
-  opacity: 0.9;
+  width: 32px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 3px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -747,6 +749,17 @@ a {
 }
 
 /* ============================================
+   移动端汉堡菜单按钮（默认隐藏）
+   ============================================ */
+.nav-toggle {
+  display: none;
+}
+.nav-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ============================================
    响应式
    ============================================ */
 @media (max-width: 1024px) {
@@ -760,8 +773,45 @@ a {
     padding: 0 16px;
     height: 56px;
   }
+  /* 移动端：显示汉堡菜单按钮，链接折叠 */
+  .nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--fg-primary);
+    flex-shrink: 0;
+  }
   .nav-links {
     display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 16px 16px;
+    gap: 4px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-link {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-radius: var(--radius-sm);
+  }
+  .nav-link.active {
+    background: var(--accent-bg);
   }
   .hero-card {
     padding: 32px 28px;
@@ -966,21 +1016,15 @@ a {
   padding: 20px 16px;
   text-align: center;
   position: relative;
+  transition: var(--transition);
+  cursor: default;
 }
 
-.process-step::after {
-  content: '→';
-  position: absolute;
-  right: -16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.process-step:last-child::after {
-  display: none;
+.process-step:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  z-index: 5;
 }
 
 .process-step .step-num {
@@ -1008,6 +1052,40 @@ a {
   color: var(--fg-muted);
 }
 
+/* hover 弹图（图片由 JS 通过 .popup 元素注入） */
+.process-step .popup {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -110%);
+  width: 560px;
+  height: 360px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 999;
+}
+
+.process-step .popup img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.process-step:hover .popup {
+  opacity: 1;
+  transform: translate(-50%, -115%);
+}
+
 /* 图文混排 - 设计图纸区 */
 .drawings-list {
   display: flex;
@@ -1018,9 +1096,9 @@ a {
 
 .drawing-item {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 1fr 280px;
   gap: 32px;
-  align-items: center;
+  align-items: start;
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
@@ -1033,7 +1111,7 @@ a {
 }
 
 .drawing-item.reverse {
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 280px 1fr;
 }
 
 .drawing-item.reverse .drawing-img {
@@ -1042,24 +1120,106 @@ a {
 
 .drawing-img {
   width: 100%;
-  aspect-ratio: 4/3;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--bg-base);
+  background: #FFFFFF;
+  padding: 12px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 
-.drawing-img img {
+/* 单图（图数量=1）: 16:9 固定比例 */
+.drawing-img:has(> img:only-child) {
+  aspect-ratio: 16/9;
+}
+
+/* 多图：自然高度 */
+.drawing-img > img:only-child {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* 容器里有 >=2 张图时：去掉 16:9 限制 */
+.drawing-img > img:not(:only-child) {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+/* ============================================
+   四宫格布局 — drawing-item.quad (2x2)
+   左上：文字 / 右上：墙构造 / 左下：0529爆炸图 / 右下：窗构造
+   ============================================ */
+.drawing-item.quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.drawing-item.quad .drawing-info {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.drawing-item.quad .drawing-img:nth-of-type(1) {
+  grid-column: 2;
+  grid-row: 1;
+  aspect-ratio: 5/7;
+  margin: 0;
+}
+.drawing-item.quad .drawing-img:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 2;
+  aspect-ratio: 16/9;
+  margin: 0;
+}
+.drawing-item.quad .drawing-img:nth-of-type(3) {
+  grid-column: 2;
+  grid-row: 2;
+  aspect-ratio: 1/1;
+  margin: 0;
+}
+
+.drawing-item.quad .drawing-img {
+  background: #FFFFFF;
+  padding: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.drawing-item.quad .drawing-img > img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.drawing-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
   cursor: zoom-in;
+}
+
+.drawing-info {
+  padding: 8px 16px;
 }
 
 .drawing-info h4 {
   font-size: 18px;
   font-weight: 600;
   color: var(--fg-primary);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .drawing-info .drawing-meta {
@@ -1067,14 +1227,14 @@ a {
   color: var(--fg-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .drawing-info p {
   font-size: 13px;
   color: var(--fg-secondary);
-  line-height: 1.8;
-  margin-bottom: 8px;
+  line-height: 1.85;
+  margin-bottom: 10px;
 }
 
 /* 性能图组 */
@@ -1104,6 +1264,64 @@ a {
 .perf-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 .perf-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 .perf-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* 细部连接构造 · 大图居中，4 小图分两侧（3 列 grid） */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+  min-height: 520px;
+}
+
+/* 4 张小图占左/右两列各 2 个 */
+.detail-grid > .perf-card:nth-child(1) { grid-column: 1; grid-row: 1; }   /* 左上 */
+.detail-grid > .perf-card:nth-child(2) { grid-column: 3; grid-row: 1; }   /* 右上 */
+.detail-grid > .perf-card:nth-child(3) { grid-column: 1; grid-row: 2; }   /* 左下 */
+.detail-grid > .perf-card:nth-child(4) { grid-column: 3; grid-row: 2; }   /* 右下 */
+
+/* 大图占中间 2 行 */
+.detail-grid > .perf-card.detail-large {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 4 张小图：4:3 充满 grid cell · cover 裁切 */
+.detail-grid > .perf-card:not(.detail-large) {
+  display: flex;
+  flex-direction: column;
+}
+.detail-grid > .perf-card:not(.detail-large) img {
+  width: 100%;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: var(--bg-base);
+}
+.detail-grid > .perf-card:not(.detail-large) .perf-caption {
+  padding: 6px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* 大图：充满 2 行 · cover 裁切 */
+.detail-grid > .perf-card.detail-large img {
+  width: 100%;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  background: var(--bg-base);
+}
+.detail-grid > .perf-card.detail-large .perf-caption {
+  padding: 8px 12px;
+  font-size: 12px;
+}
 
 .perf-card {
   background: var(--bg-card);
@@ -1353,6 +1571,28 @@ a {
   font-style: italic;
 }
 
+/* 数据条 · 可视化占比 */
+.bar {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--accent);
+  min-width: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Mermaid 流程图容器微调 */
+.mermaid {
+  text-align: center;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding: 12px 0;
+}
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* 浅色信息条 */
 .info-bar {
   display: flex;
@@ -1393,4 +1633,15 @@ a {
   .kpi-grid { grid-template-columns: 1fr 1fr; }
   .perf-grid.cols-2, .perf-grid.cols-3, .perf-grid.cols-4 { grid-template-columns: 1fr; }
   .equipment-list { grid-template-columns: 1fr; }
+  .detail-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: 0;
+  }
+  .detail-grid > .perf-card:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .detail-grid > .perf-card:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .detail-grid > .perf-card:nth-child(3) { grid-column: 1; grid-row: 3; }
+  .detail-grid > .perf-card:nth-child(4) { grid-column: 1; grid-row: 4; }
+  .detail-grid > .perf-card.detail-large { grid-column: 1; grid-row: 5; }
+  .detail-grid > .perf-card.detail-large img { aspect-ratio: 16/9; max-height: 320px; }
 }
